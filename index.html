@@ -25,20 +25,36 @@
     <main>
 
         <section class="main-section">
-            <h1>WELCOME to the Hollow</h1>
+            <h1>Frog And Toad Are Friends</h1>
 
-            <div>
-                <label class="toad-character-choice">
-                    <input type="radio" name="frogtoad" value="" checked>     
-                    <img src="./assets/Toad.jpg">
-                </label>
+                    <form id="formulate">
+                        <div name="name">
+                            
+                            <label>
 
-                <label class="frog-character-choice">
-                    <input type="radio" name="frogtoad" value="">     
-                    <img src="./assets/frog.jpg">
-                </label>
-            </div>
-            
+                                <input type="radio" name="frogtoad" value="frog">     
+                                <img src="./assets/frogleft.jpg">
+                      
+                            </label>
+    
+                            <label>
+
+                                <input type="radio" name="frogtoad" value="toad">     
+                                <img src="./assets/toadright.jpg">
+                        
+                            </label>
+                        </div>
+                        
+                        <button class="continue">I Choose You!</button>
+
+                    </form>
+
+
+                    <div class="center">
+                        <h2 id="curvy">CHOOSE <span id="frogcolor">FROG</span> OR <span id="toadcolor">TOAD</span></h2>
+                    </div>
+               
+
         </section>
     
     </main>
@@ -51,6 +67,7 @@
     </footer>
 
     <script type="module" src="app.js"></script>
+
 </body>
 
 </html>

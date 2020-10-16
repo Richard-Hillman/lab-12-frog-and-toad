@@ -12,6 +12,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-image: url(../assets/paper.jpg);
 }
 
 section {
@@ -34,9 +35,6 @@ header {
 }
 
 
-.gutter-right {
-    margin-right: 20px;
-}
 
 
 content {
@@ -57,4 +55,51 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
+
+
+/* classes---------------------------------------------------------------------------- */
+
+
+.gutter-right {
+margin-right: 20px;
+}
+
+.rowIt {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify { 
+    text-align: justify;
+}
+
+.block {
+    display: block;
+}
+
+.inblock {
+    display: inline-block;
+}
+
+.gutter-right {
+    margin-right: 20px;
+}
+
+.resets {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

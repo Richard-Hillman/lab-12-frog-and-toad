@@ -3,5 +3,38 @@ input[type="radio"] {
 }
 
 [type=radio]:checked + img {
-    outline: 2px solid rgba(70, 148, 7, 0.938);
+    outline: 5px solid rgba(122, 8, 8, 0.65);
   }
+
+h1 {
+    font-size: 85px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+img {
+    opacity: 69%;
+}
+
+.continue {
+    display: flex;
+    justify-content: center;
+    width: 103%;
+    height: 35px;
+    font-size: 20px;
+    padding: 0;
+    background-color: rgb(206, 70, 29);
+    opacity: 60%;
+}
+
+#frogcolor {
+    font-weight : 1000; 
+    color: rgb(18, 97, 18);
+}
+
+#toadcolor {
+    font-weight: 1000;
+    color: rgb(90, 76, 12)
+}
