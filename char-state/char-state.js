@@ -13,23 +13,23 @@ function loadChar() {
 
     // if no local storage user then  redirect back to char selection (change back to char selection)
     if (!user) {
-        window.location = '../quests/index.html';
-    }
-
+        window.location = '../adventure-folder/index.html';
+   
     // places user name (frog or toad)
-    name.textContent = user.name;
+        name.textContent = user.name;
     // what buttons?
-    buttons.textContent = user.buttons;
+        buttons.textContent = user.buttons;
 
     // this determines if toad is too grumpy and if so start over, if not display grumpy level.
-    if (isGrumpy(user)) {
-        grumpyLevel.textContent = 'Toad is too GRUMPY and they are going back to bed!';
+        if (isGrumpy(user)) {
+            grumpyLevel.textContent = 'Toad is too GRUMPY and they are going back to bed!';
         // need to add return to house page or start adventure over
-    }
-    else {
-        grumpyLevel.textContent = user.grumpyLevel;
-    }
+        }
+        else {
+            grumpyLevel.textContent = user.grumpyLevel;
+        }
 
+    }
 }
 
 export default loadChar;

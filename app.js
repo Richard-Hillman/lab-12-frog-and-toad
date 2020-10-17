@@ -1,6 +1,6 @@
 // import functions 
 import { saveUser } from './utils/storage-utils.js';
-import loadChar from './char-state/char-state.js';
+
 
 // grab my form, why i have no idea, but i got a form from my page
 const form = document.getElementById('formulate');
@@ -24,5 +24,5 @@ form.addEventListener('submit', (e) => {
     saveUser(user);
 
     // go to your first quest
-    window.location.href = '../quests/index.html';
+    window.location.href = '../map/index.html';
 });
