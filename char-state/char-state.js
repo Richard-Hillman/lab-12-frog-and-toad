@@ -13,7 +13,7 @@ function loadChar() {
 
     // if no local storage user then  redirect back to char selection (change back to char selection)
     if (!user) {
-        window.location = '../quests/index.html';
+        window.location = '../adventure-folder/index.html';
    
     // places user name (frog or toad)
         name.textContent = user.name;

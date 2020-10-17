@@ -6,7 +6,7 @@ function createAdventureLink(adventure) {
     // searchParams.set('id', adventure.id);
     // link.href='quest?' + searchParams.toString();
 
-    link.href = '../quest/?id' + adventure.id;
+    link.href = '../adventure-folder/?id' + adventure.id;
 
     return link;    
 }

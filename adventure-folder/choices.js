@@ -1,17 +1,17 @@
 function choiceCreator(choice) {
-    const label = document.getElement('label');
-    // label.classList.add('choice');
+    const label = document.createElement('label');
+    label.classList.add('choice');
     
-    const description = document.createElement('span');
-    description.textContent = choice.description;
     
     const radio = document.createElement('input');
     radio.type = 'radio';
     radio.name = 'choice';
     radio.required = true;
     radio.value = choice.id;
-
-    label.appendChild(description, radio);
+    
+    const description = document.createElement('span');
+    description.textContent = choice.description;
+    label.appendChild(description);
     return label;
 }
 
