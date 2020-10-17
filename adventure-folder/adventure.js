@@ -1,11 +1,11 @@
-import adventures from '../data/quest-data.js';
+import adventures from '../data/adventure-data.js';
 // import { getUser, saveUser } from '../utils/storage-utils.js';
 import { findById } from '../utils/utils.js';
 import choiceCreator from './choices.js';
 import loadChar from '../char-state/char-state.js';
 import howGrumpy from './how-grumpy.js';
 // import howGrumpy from '../quests/how-grumpy';
-import createQuestLink from './create-quest.js';
+import createAdventureLink from './create-adventure-link.js';
 
 
 // create a URL for my page i think? 
@@ -20,7 +20,6 @@ const section = document.getElementById('section');
 
 // get adventures query param
 const searchParameters = new URLSearchParams(window.location.search);
-
 // get adventures quest ID
 const adventureID = searchParameters.get['id'];
 // find the adventure
