@@ -15,7 +15,7 @@ function loadChar() {
     if (!user) {
         window.location = '../quests/index.html';
     }
-
+    console.log(name)
     // places user name (frog or toad)
     name.textContent = user.name;
     // what buttons?

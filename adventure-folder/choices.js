@@ -12,7 +12,7 @@ function choiceCreator(choice) {
     radio.value = choice.id;
 
     label.appendChild(description, radio);
-    form.appendChild(label);
+    return label;
 }
 
 export default choiceCreator;
