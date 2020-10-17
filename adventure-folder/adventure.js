@@ -1,10 +1,10 @@
 import adventures from '../data/adventure-data.js';
-// import { getUser, saveUser } from '../utils/storage-utils.js';
+import { getUser, saveUser } from '../utils/storage-utils.js';
 import { findById } from '../utils/utils.js';
 import choiceCreator from './choices.js';
 import loadChar from '../char-state/char-state.js';
-// import howGrumpy from './how-grumpy.js';
-import { saveUser } from '../utils/storage-utils.js';
+import howGrumpy from './how-grumpy.js';
+
 // import howGrumpy from '../quests/how-grumpy';
 // import createAdventureLink from './create-adventure-link.js';
 import completedAll from './completedAll.js';
@@ -26,6 +26,10 @@ const searchParameters = new URLSearchParams(window.location.search);
 const adventureID = searchParameters.get('id');
 // find the adventure
 const adventure = findById(adventures, adventureID);
+
+const result = document.getElementById('result');
+const resultDescription = document.getElementById('result-description');
+const choiceForm = document.getElementById('choice-form');
 
 
 // make stuff-----------------------------------------------------------------------------------------------
@@ -79,22 +83,35 @@ form.appendChild(button);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const checked = document.querySelectorAll(':checked');
-    const userChecked = checked.value;
-    const choice = findById(adventure.choices, userChecked);
-    
-    const user = loadChar();
+    const formData = new FormData(choiceForm);
+    const choiceId = formData.get('choice');
 
-    user.grumpyLevel += choice.grumpyLevel;
-    user.buttons += choice.buttons;
+    const choice = findById(adventure.choices, choiceId);
 
-    user.completed.id = true;
-
+    const user = getUser();
+    howGrumpy(choice, adventure.id, user);
     saveUser(user);
+    
+    choiceForm.classList.add('hidden');
+    result.classList.remove('hidden');
+    resultDescription.textContent = choice.result
+
+    // const checked = document.querySelectorAll(':checked');
+    // const userChecked = checked.value;
+    // const choice = findById(adventure.choices, userChecked);
+    
+    // const user = loadChar();
+
+    // user.grumpyLevel += choice.grumpyLevel;
+    // user.buttons += choice.buttons;
+
+    // user.completed.id = true;
+
+    // saveUser(user);
  
-    if (user.grumpyLevel >= 10 || completedAll(adventures, user)) {
-        window.location.href = '../grumpyHouse';
-    }
+    // if (user.grumpyLevel >= 10 || completedAll(adventures, user)) {
+    //     window.location.href = '../grumpyHouse';
+    // }
 });
 
 // append that shit
