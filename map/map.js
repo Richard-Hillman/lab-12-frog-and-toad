@@ -35,6 +35,7 @@ const ul = document.querySelector('ul');
 adventures.forEach(adventure => {
     const li = document.createElement('li');
     const link = document.createElement('a');
+    link.classList.add('adventure');
 
     li. appendChild(link);
 
@@ -43,3 +44,4 @@ adventures.forEach(adventure => {
 
     ul.append(li);
 });
+

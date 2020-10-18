@@ -1,5 +1,45 @@
 header { 
     height:10%;
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
+
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    text-align: center;
+    width: 40%;
+}
+
+section {
+    width: 100%;
+    line-height: 50px;
+}
+
+.adventure {
+    color:black
+}
+
+.adventure.completed {
+    height: 30px;
+    display: hidden;
+    color: red;
+    font-size: .9em;
+}
+
+.adventure.completed:after {
+    content: '✔';
+}
+
+#quests {
+position: relative;
+}
+
+#adventures {
+    width: 80%;
+    }
