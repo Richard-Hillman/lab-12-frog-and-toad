@@ -30,7 +30,7 @@ export default [
             id: 'Toad Naps',
             description: 'Toad clambers into bed.',
             result: `
-            Frog Argues with toad, I don\'t want to take a nap. I think you should nap toad. Toad is grumpy but after a long nap they feel great! -1 grumpy level. 
+            Frog Argues with toad, I don't want to take a nap. I think you should nap toad. Toad is grumpy but after a long nap they feel great! -1 grumpy level. 
         `,
             grumpyLevel: -1,
             buttons: 0
