@@ -4,10 +4,10 @@ import { findById } from '../utils/utils.js';
 import choiceCreator from './choices.js';
 import loadChar from '../char-state/char-state.js';
 import howGrumpy from './how-grumpy.js';
+import completedAll from './completedAll.js';
 
 // import howGrumpy from '../quests/how-grumpy';
 // import createAdventureLink from './create-adventure-link.js';
-// import completedAll from './completedAll.js';
 
 // get the character and stick it at the top
 loadChar();
@@ -22,9 +22,9 @@ const adventureID = searchParameters.get('id');
 // find the adventure
 const adventure = findById(adventures, adventureID);
 
-const section = document.getElementById('section');
+
 const result = document.getElementById('result');
-const resultDescription = document.getElementById('result-description');
+// const resultDescription = document.getElementById('result-description');
 const description = document.getElementById('first');
 const form = document.getElementById('choice-form');
 const title = document.getElementById('title');
@@ -35,47 +35,26 @@ const title = document.getElementById('title');
 // make stuff-----------------------------------------------------------------------------------------------
 title.textContent = adventure.title;
 description.textContent = adventure.description;
-
-// function createChoice(choices) {    
-    // ----------------------------------------------------------------------------------------------------Problem CHild
+ 
 for (let index = 0; index < adventure.choices.length; index++) {
     const choice = adventure.choices[index];
     const choiceDOM = choiceCreator(choice);
     form.appendChild(choiceDOM);
 }
 
-// section.appendChild(form);
-// for each of the quest's choices
-
-
-
-// const radio = document.createElement('input');
-// radio.type = 'radio';
-// radio.name = 'choices';
-// radio.value = choice.id;
-// radio.required = true;
-
-// label.append(span, radio);
-// form.appendchild(label);
-// ----------------------------------------------------------------------------------------------------------------
-// create my self a button for pressin
-
-// create a damn form
-
-// description.textContent = adventures[0].description;
-
-// const h3 = document.createElement('h3');
-// h3.textcontent = adventures.title;
-// section.append(h3);
-
 const button = document.createElement('button');
+button.classList.add('button-one');
 button.textContent = 'Decision';
 form.appendChild(button);
+
+
 // -------------------------------------------------------------------------------Next Button
 // const button2 = document.createElement('button');
 // button.textContent = 'Next';
 // form.appendChild(button);
 // -------------------------------------------------------------------------------
+   
+
     // because i have a form I have to have submit 
     // now i also have to decide what to do when i click this submit button
     // so far i have checked so i can grab the users selection
@@ -94,24 +73,24 @@ form.addEventListener('submit', (e) => {
     
     form.classList.add('hidden');
     result.classList.remove('hidden');
-    resultDescription.textContent = choice.result;
+    alert(choice.result);
+    window.location = '../map/index.html';
+   
+
+    user.grumpyLevel += choice.grumpyLevel;
+    user.buttons += choice.buttons;
+    user.completed.id = true;
+    saveUser(user);
+    if (user.grumpyLevel >= 10 || completedAll(adventures, user)) {
+        window.location.href = '../grumpyHouse/index.html';
+    }
 });
     
+
+
     // const checked = document.querySelectorAll(':checked');
     // const userChecked = checked.value;
     // const choice = findById(adventure.choices, userChecked);
     
-    // const user = loadChar();
-
-    // user.grumpyLevel += choice.grumpyLevel;
-    // user.buttons += choice.buttons;
-    
-    // user.completed.id = true;
-
-    // saveUser(user);
-    
-    // if (user.grumpyLevel >= 10 || completedAll(adventures, user)) {
-        //     window.location.href = '../grumpyHouse';
-        // }
 
 // append that shit
