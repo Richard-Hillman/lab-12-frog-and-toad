@@ -5,4 +5,12 @@ header {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	height: 60px;
 }
+
+main {
+	height: 90%;
+	box-sizing: border-box;
+
+}
+
