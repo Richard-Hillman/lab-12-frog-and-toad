@@ -11,7 +11,7 @@ loadChar();
 const user = getUser();
 
 if (isGrumpy(user) || completedAll(adventures, user)) {
-    window.location = '../houseOfGrump';
+    window.location = '../grumpy/';
 }
 
 const nav = document.getElementById('adventures');

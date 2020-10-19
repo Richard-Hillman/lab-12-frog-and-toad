@@ -85,7 +85,7 @@ export default [
     // --------------------------------------------------------------------------------------------------
     {
         id: 'river',
-        title: 'Chapter Three: ',
+        title: 'Chapter Three: The last stop',
         image:'../assets/frogriver.png',
         description: `
         Frog and Toad come back to the river by their house. They see a stone that Frog and Toad sat on to talk about the days news, a tree that had fallen into the water where toad had been fishing from, and a beaver damn where they had spoken with Beaver about their delicious pies. Where should we look exclaimed Frog? 
@@ -105,7 +105,8 @@ export default [
             buttons : 0,
         }, {
             id: 'beaver',
-            description: 'Beaver sees Frog and Toad coming and comes out to see why they are back so soon. After Toad explains that they lost their button Beaver pulls out a handmade wooden button for Toad.',
+            description: 'Beaver sees Frog and Toad coming and comes out to see why they are back so soon.', 
+            result: 'After Toad explains that they lost their button Beaver pulls out a handmade wooden button for Toad.',
             grumpyLevel: 0,
             buttons: 1,
         }]
