@@ -24,5 +24,5 @@ form.addEventListener('submit', (e) => {
     saveUser(user);
 
     // go to your first quest
-    window.location.href = '../map/index.html';
+    window.location.href = './map/';
 });
