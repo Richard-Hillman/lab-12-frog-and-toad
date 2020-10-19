@@ -19,7 +19,7 @@ function loadChar() {
         name.textContent = user.name;
     // what buttons?
         buttons.textContent = user.buttons;
-
+        console.log(user.buttons)
     // this determines if toad is too grumpy and if so start over, if not display grumpy level.
         if (isGrumpy(user)) {
             grumpyLevel.textContent = 'Toad is too GRUMPY and they are going back to bed!';

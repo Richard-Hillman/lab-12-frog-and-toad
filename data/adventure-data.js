@@ -1,16 +1,10 @@
 export default [
     {
         id: 'Chapter One',
-        title: 'Chapter One: Good Morning Frog, Good Morning Toad!',
-        map: {
-            top: '89%',
-            left: '44%'
-        },
-        image: 'monsters.jpg',
+        title: 'Chapter ONE: Good Morning Frog, Good Morning Toad!',
+        image: '../assets/frogbed.png',
         description: `
-        One day in summer Frog was not
-        feeling well.
-        Toad said, “Frog, you are looking
+        One day in summer Frog was not feeling well. Toad said, “Frog, you are looking
         quite green.”
         “But I always look green,” said Frog.
         “I am a frog.”
@@ -18,122 +12,102 @@ export default [
         a frog,” said Toad.
         “Get into my bed and rest.”
     `,
+    // ----------------------------------------------------
         choices: [{
-            id: 'Frog Naps',
+
+
+            id: 'frog-nap',
             description: 'Frog takes a long nap.',
             result: `
-           You go to sleep and nap all the way through morning tea and biscuits. You wake up more green than you went to bed. You feel Grumpy.   
+           Frog goes to sleep and naps all the way through morning tea and biscuits. Toad is upset that frog missed morning tea. +1 Grumpy Level.
         `,
-            grumpyLevel: 1,
+            grumpyLevel: +1,
             buttons: 0,
-        }, {
-            id: 'Toad Naps',
-            description: 'Toad clambers into bed.',
+        },
+        {
+            id: 'toad-nap',
+            description: 'Frog feels sure that toad should nap too. Toad sets up a cot and the two of them rest before their afternoon walk.',
             result: `
-            Frog Argues with toad, I don\'t want to take a nap. I think you should nap toad. Toad is grumpy but after a long nap they feel great! -1 grumpy level. 
+            Both Frog and Toad wake up refreshed. Frog wakes up and finds a red button under their pillow. +1 button'
         `,
-            grumpyLevel: -1,
-            buttons: 0
-        }, {
+            grumpyLevel: 0,
+            buttons: +1,
+        },
+        {
             id: 'No Sleep',
             description: 'Frog says they don\'t want to miss afternoon tea and biscuits!',
             result: `
             The day is started and Frog and Toad are on their way!
         `,
             grumpyLevel: 0,
+            buttons: 0,
+        }]
+    },
+    // --------------------------------------------------------------------------------------------------
+    {
+        id: 'Meadow',
+        title: 'Chapter TWO: Toad loses his button',
+        image: '../assets/toadlost.png',
+        description: `
+        As toad and frog were on their morning walk Toad exclaims "Oh drat, Not only do my feet hurt but I have lost one of the buttons on my jacket!" Frog says "don't worry, we will go back to all the places where we walked!" They walked back to the large meadow where they had just come. They begin to search.   
+    `,
+    // ------------------------------------------------------
+        choices: [{
+
+
+            id: 'rocks',
+            description: 'Frog and toad find a pile of rocks that Toad tripped over previously in the day. Frog says "lets check here Toad!"',
+            result: `
+            Frog searches the rocks and toad falls flat on his nose. +1 Grumpy Level.  
+        `,
+            grumpyLevel: +1,
             buttons: 0
+        }, 
+        {
+            id: 'weeds',
+            description: 'Frog and Toad look and see a large group of weeds they had walked through earlier. Frog says, "maybe we could look here!"',
+            result: `
+            Frog and Toad look into the weeds and they see a group of ducklings. "Hello" says Toad, we are looking for a missing button! Have you by any chance seen it?" The ducks greet them and one of the ducklings says, "I found a button! The duckling spits out a button. You can have it!" Toad says "This button is blue and my button is black, humph". Frog thanks the ducklings for the button and puts the button in his pocket. +1 Button, +1 Grumpy Level.
+        `,
+            grumpyLevel: +1,
+            buttons: +1
+        }, 
+        {
+            id: 'puddle',
+            description: 'Toad sees a puddle he stepped in earlier and says to frog, "I stepped in that puddle earlier." Frog and Toad look into the puddle.', 
+            result: `
+            Seeing their reflection together they laugh and giggle. In the water they see a reflection of something and Toad pulls out a shiny silver button! "Here you go frog this isn't my button but it sure is nice!" Frog thanks Toad and says, "We will find your button soon Toad do not worry". +1 button.
+        `,
+            grumpyLevel: 0,
+            buttons: +1, 
         }]
     },
+    // --------------------------------------------------------------------------------------------------
     {
-        id: 'dragon',
-        title: 'A Scary Dragon',
-        map: {
-            top: '17%',
-            left: '37%'
-        },
-        image: 'dragon.jpg',
-        audio: 'dragon.wav',
-        action: 'dragon-growl.aiff',
+        id: 'river',
+        title: 'Chapter Three: ',
+        image:'../assets/frogriver.png',
         description: `
-        You travel to a nearby village you have heard is being
-        terrorized by a dragon. Sure enough as you rent a room
-        in a local inn, you go outside and see the dragon about
-        to lay seige! What do you do?
+        Frog and Toad come back to the river by their house. They see a stone that Frog and Toad sat on to talk about the days news, a tree that had fallen into the water where toad had been fishing from, and a beaver damn where they had spoken with Beaver about their delicious pies. Where should we look exclaimed Frog? 
     `,
+    // ----------------------------------------------------
         choices: [{
-            id: 'run',
-            description: 'Get the hell out of the village',
-            result: `
-            You high tail it in the opposite direction. Luckily,
-            in the panic you find a bag on the ground with 15 gold.
-            Unluckily, you trip over a discarded wagon wheel on your
-            way out of town and take 40 hp damage. 
-        `,
-            hp: -35,
-            gold: 35
+            id: 'stone',
+            description: 'The Sitting Stone',
+            result: 'The sitting stone is Frog and Toads favorite spot for talking about the days news and it has two rounded spots for them to sit in very comfortably. Toad looks all around the base of the stone and finds a marvelous yellow button! +1 Button',
+            grumpyLevel: 0,
+            buttons: +1, 
         }, {
-            id: 'fight',
-            description: 'Fiiiiiggghhhttt!',
-            result: `
-            You attempt to charge towards the dragon, who sees you approach
-            and let's loose a fireball. You wake up the next morning and the
-            village has been completely burned to the ground.
-            Oh, and you take 45 hp damage.
-        `,
-            hp: -45,
-            gold: 0
+            id: 'tree',
+            description: 'Fallen Tree',
+            result: 'This tree is where Frog and Toad had first met and their friendship was formed. Frog searches through the trees upended roots but cannot find any buttons. Frog and Toad smile anyhow and are happy every time they walk past the tree. -1 Grumpy Level.',
+            grumpyLevel: -1,
+            buttons : 0,
         }, {
-            id: 'archer',
-            description: 'Emulate that guy from LOR who shot an arrow',
-            result: `
-            Inspired by the legend of Bard the Bowman, you notice a
-            stunned archer standing nearby and take their bow and quiver,
-            climb to the top of a tall tower and take aim. On the dragon's
-            next pass you steady your aim and let one fly. Amazingly,
-            you strike the dragon in the eye, piercing into the brain and
-            killing the dragon instantly. The villagers declare you their hero
-            and award you 90 gold.
-        `,
-            hp: 0,
-            gold: 90
-        }]
-    },
-    {
-        id: 'treasure',
-        title: 'A Golden Treasure',
-        map: {
-            top: '31%',
-            left: '5%'
-        },
-        prerequisites: ['dragon', 'monsters'],
-        image: 'treasure-chests.png',
-        audio: 'treasure-chests.wav',
-        action: 'chest-opening.wav',
-        description: `
-        As you enter the quest chamber you notice three chests before you.
-        Just as you start to imagine the wealth, you see a giant serpent
-        emerge from the back of the chamber. You'll need to make a run for it,
-        but you have time to open one chest before you take off. Which one 
-        do you choose?
-    `,
-        choices: [{
-            id: 'wooden',
-            description: 'A Wooden Chest',
-            result: 'You grab 40 gold pieces!',
-            hp: 0,
-            gold: 40
-        }, {
-            id: 'golden',
-            description: 'A Golden Chest',
-            result: 'Oh no! The chest is booby trapped with poison and you take 50 hp damage',
-            hp: -50,
-            gold: 0
-        }, {
-            id: 'jeweled',
-            description: 'A Jeweled Chest',
-            result: 'A warm light engulfs you and you gain 35 hp',
-            hp: 35,
-            gold: 0
+            id: 'beaver',
+            description: 'Beaver sees Frog and Toad coming and comes out to see why they are back so soon. After Toad explains that they lost their button Beaver pulls out a handmade wooden button for Toad.',
+            grumpyLevel: 0,
+            buttons: 1,
         }]
     }
 ];

@@ -28,14 +28,18 @@ const result = document.getElementById('result');
 const description = document.getElementById('first');
 const form = document.getElementById('choice-form');
 const title = document.getElementById('title');
-
+const image = document.getElementById('image');
 
 // set state------------------------------------------------------------------------------------------------
 
 // make stuff-----------------------------------------------------------------------------------------------
 title.textContent = adventure.title;
-description.textContent = adventure.description;
- 
+
+image.src = adventure.image;
+
+description.textContent = adventure.description; 
+
+
 for (let index = 0; index < adventure.choices.length; index++) {
     const choice = adventure.choices[index];
     const choiceDOM = choiceCreator(choice);
