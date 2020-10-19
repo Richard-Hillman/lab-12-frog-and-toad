@@ -86,7 +86,7 @@ form.addEventListener('submit', (e) => {
     user.completed.id = true;
     saveUser(user);
     if (user.grumpyLevel >= 10 || completedAll(adventures, user)) {
-        window.location.href = '../grumpyHouse/index.html';
+        window.location.href = '../grumpy/index.html';
     }
 });
     
